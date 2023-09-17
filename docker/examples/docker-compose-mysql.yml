@@ -43,6 +43,8 @@ services:
       # Add the baked-in username and password for the zipkin-mysql image
       - MYSQL_USER=zipkin
       - MYSQL_PASS=zipkin
+      - JAVA_OPTS=-Xms16g -Xmx32g
+      #- JAVA_OPTS=-XX:+ExitOnOutOfMemoryError
     depends_on:
       - storage
 
