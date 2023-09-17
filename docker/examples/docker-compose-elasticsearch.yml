@@ -27,6 +27,7 @@ services:
     # Uncomment to expose the storage port for testing
     # ports:
     #   - 9200:9200
+    restart: unless-stopped
 
   # Use Elasticsearch instead of in-memory storage
   zipkin:
@@ -41,6 +42,8 @@ services:
       # - ES_HTTP_LOGGING=BODY
     depends_on:
       - storage
+    restart: unless-stopped
+
 
   dependencies:
     extends:
